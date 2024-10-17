@@ -68,14 +68,20 @@ class Dashboard extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(children: [
-            Column(
-              children: [
-                Image.asset("assets/images/ic_menu_doa.png"),
-                Text("Doa-Doa",style: TextStyle(fontFamily: "PoppinsSemiBold",fontSize: 14,
-                color: ColorApp.white
-                ),
-                )
-              ],
+            GestureDetector(
+              onTap: (){
+              Navigator.pushNamed(context, '/doa');
+              },
+              child: Column(
+                children: [
+                  
+                  Image.asset("assets/images/ic_menu_doa.png"),
+                  Text("Doa-Doa",style: TextStyle(fontFamily: "PoppinsSemiBold",fontSize: 14,
+                  color: ColorApp.white
+                  ),
+                  )
+                ],
+              ),
             ),
             SizedBox(width: 12,),
             Column(
@@ -121,7 +127,7 @@ class Dashboard extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Text("Inspirasi", style: TextStyle(fontFamily: "PoppinsSemiBold",
-              fontSize: 20
+              fontSize: 20, 
               ),
               ),
             ),
